@@ -42,8 +42,8 @@ public class Main {
 		System.out.printf("Média da turma: %.2f%n", mediaTurma);
 
 		int contador = 0;
-		for (int i = 0; i < notasAlunos.length; i++){
-			if (notasAlunos[i] >= mediaTurma){
+		for (double media : medias){
+			if (media >= mediaTurma){
 				contador++;
 			}
 		}
