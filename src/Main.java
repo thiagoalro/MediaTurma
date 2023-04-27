@@ -28,9 +28,17 @@ public class Main {
 			somaNotas += notasAlunos[i];
 		}
 
-		System.out.printf("Média da turma: %.2f", somaNotas/quantidadeAlunos);
+		double mediaTurma = somaNotas/quantidadeAlunos;
+		System.out.printf("Média da turma: %.2f%n", mediaTurma);
 
+		int contador = 0;
+		for (int i = 0; i < notasAlunos.length; i++){
+			if (notasAlunos[i] >= mediaTurma){
+				contador++;
+			}
+		}
 
+		System.out.printf("Quantidade de alunos com nota maior ou igual que a média da turma: %d", contador);
 
 	}
 }
