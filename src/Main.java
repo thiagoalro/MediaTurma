@@ -19,9 +19,18 @@ public class Main {
 			notasAlunos[i] = input.nextDouble();
 		}
 
+//		for (int i = 0; i < notasAlunos.length; i++){
+//			System.out.printf("Nota do %dº aluno: %.2f%n", i+1, notasAlunos[i]);
+//		}
+
+		double somaNotas = 0;
 		for (int i = 0; i < notasAlunos.length; i++){
-			System.out.printf("Nota do %dº aluno: %.2f%n", i+1, notasAlunos[i]);
+			somaNotas += notasAlunos[i];
 		}
+
+		System.out.printf("Média da turma: %.2f", somaNotas/quantidadeAlunos);
+
+
 
 	}
 }
