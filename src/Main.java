@@ -24,8 +24,8 @@ public class Main {
 //		}
 
 		double somaNotas = 0;
-		for (int i = 0; i < notasAlunos.length; i++){
-			somaNotas += notasAlunos[i];
+		for (double notasAluno : notasAlunos) {
+			somaNotas += notasAluno;
 		}
 
 		double mediaTurma = somaNotas/quantidadeAlunos;
