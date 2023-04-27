@@ -10,26 +10,35 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
+		Scanner inputStrings = new Scanner(System.in);
+
 		System.out.print("Digite a quantidade de alunos na turma: ");
 		int quantidadeAlunos = input.nextInt();
 
 		Aluno[] alunos = new Aluno[quantidadeAlunos];
 
 		for (int i = 0; i < alunos.length; i++){
-			System.out.printf("Digite a nota do %dº aluno: ", i+1);
-			//alunos[i] = input.nextDouble();
+
+			System.out.print("Digite o nome do aluno: ");
+			String nomeAluno = inputStrings.nextLine();
+
+			System.out.printf("Digite a nota 1 do %dº aluno: ", i+1);
+			double nota1Aluno = input.nextDouble();
+
+			System.out.printf("Digite a nota 2 do %dº aluno: ", i+1);
+			double nota2Aluno = input.nextDouble();
+
+			alunos[i] = new Aluno(nomeAluno, nota1Aluno, nota2Aluno);
 		}
 
-//		for (int i = 0; i < notasAlunos.length; i++){
-//			System.out.printf("Nota do %dº aluno: %.2f%n", i+1, notasAlunos[i]);
-//		}
-
-		double somaNotas = 0;
-		for (double notasAluno : notasAlunos) {
-			somaNotas += notasAluno;
+		double[] medias = new double[quantidadeAlunos];
+		double somaMedias = 0;
+		for (int i = 0; i < alunos.length; i++) {
+			medias[i] = alunos[i].media();
+			somaMedias += medias[i];
 		}
 
-		double mediaTurma = somaNotas/quantidadeAlunos;
+		double mediaTurma = somaMedias/quantidadeAlunos;
 		System.out.printf("Média da turma: %.2f%n", mediaTurma);
 
 		int contador = 0;
